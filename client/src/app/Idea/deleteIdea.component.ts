@@ -13,7 +13,7 @@ export class deleteIdeaComponent {
     }
     constructor(private auth: AuthenticationService, private router: Router) { }
     deleteIdea() {
-        this.auth.deleteIdea(this.credentials.id).subscribe(
+        this.auth.deleteIdea(this.credentials).subscribe(
             idea => {
                 alert('idea đã được xóa')
                 this.router.navigateByUrl('/listIdea')
