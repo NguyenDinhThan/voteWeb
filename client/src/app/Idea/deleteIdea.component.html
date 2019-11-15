@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="jumbotron mt-5">
+        <div class="col-sm-8 mx-auto">
+            <h1 class="text-center">IdeaList</h1>
+        </div>
+        
+        <table class="table col-md-6 mx-auto">
+        
+
+          <thead>
+            <tr>
+              
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let details of details">
+             
+              <td>{{details?.id}}</td>
+              <td>{{details?.name}}</td>
+              <td>{{details?.description}}</td>
+              <td class="nav-item" *ngIf="auth.isLoggedIn()">
+                <a routerLink="/updateIdea" class="nav-link">Edit</a>
+              </td> 
+              <td class="nav-item" *ngIf="auth.isLoggedIn()">
+                <a (click) ='auth.deleteIdea()'routerLink="" class="nav-link">Delete</a>
+              </td> 
+            </tr>
+         
+          </tbody>
+           
+          
+        </table>
+    </div>
+</div>
