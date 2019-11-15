@@ -22,10 +22,10 @@
               <td>{{details?.name}}</td>
               <td>{{details?.description}}</td>
               <td class="nav-item" *ngIf="auth.isLoggedIn()">
-                <a routerLink="/updateIdea" class="nav-link">Edit</a>
+                <button routerLink="/updateIdea" class="btn btn-sm btn-warning">Edit</button>
               </td> 
               <td class="nav-item" *ngIf="auth.isLoggedIn()">
-                <a (click) ='deleteIdea()'routerLink="" class="nav-link">Delete</a>
+                <button (click) ='deleteIdea()'routerLink="/listIdea" class="btn btn-sm btn-danger">Delete</button>
               </td> 
             </tr>
          

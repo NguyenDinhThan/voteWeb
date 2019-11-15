@@ -5,7 +5,7 @@ import { db } from '../../../../database/db';
 
 
 @Component({
-    templateUrl: './createIdea.component.html'
+    templateUrl: './updateIDea.component.html'
 })
 export class updateIdeaComponent {
     credentials: Idea = {

@@ -8,6 +8,8 @@ const Users = require("../routes/User")
 
 
 //get vote list
+
+
 votes.get('/', (req, res) => {
     Vote.findAll()
         .then(vote => {
@@ -62,7 +64,7 @@ votes.get('/upvote/:ideaID', (req, res) => {
         {
             ideaID: req.params.ideaID
         },
-        attributes: ['ideaID', [Sequelize.fn('sum', Sequelize.col('vote_count')), 'totalVote']],
+        attributes: ['ideaID', [Sequelize.fn('sum', Sequelize.col('vote')), 'totalVote']],
         group: ['vote.ideaID'],
         raw: true
     })
@@ -96,6 +98,8 @@ votes.get('/downvote/:ideaID', (req, res) => {
 
         })
 })
+
+
 
 /*votes.post('/', (req, res) => {
     const upvote = 0
@@ -185,6 +189,9 @@ votes.get('/downvote/:ideaID', (req, res) => {
             res.status(404).json("error: " + err)
         })
 })*/
+
+
+
 votes.put('/:userID/:ideaID', (req, res) => {
     voteData = {
         up: req.body.up,
@@ -210,23 +217,6 @@ votes.put('/:userID/:ideaID', (req, res) => {
 votes.post('/upvote/:ideaID', (req, res) => {
     
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 module.exports = votes
 

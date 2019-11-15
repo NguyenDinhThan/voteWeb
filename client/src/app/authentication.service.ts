@@ -107,14 +107,14 @@ export class AuthenticationService {
     public updateIdea (idea : Idea) : Observable<any> {
         return this.http.put('http://localhost:3000/ideas/'+ idea.id, idea)
     }
-    public deleteIdea (idea : Idea) {
+    public deleteIdea (idea : Idea) : Observable<any> {
         return this.http.delete('http://localhost:3000/ideas/'+ idea.id)
     }
 
     public logout(): void {
         this.token = ''
         window.localStorage.removeItem('userToken')
-        this.router.navigateByUrl('/')
+        this.router.navigateByUrl('/') 
 
     }
 }

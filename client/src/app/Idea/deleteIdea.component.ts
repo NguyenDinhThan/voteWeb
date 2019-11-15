@@ -1,9 +1,10 @@
 import { Component } from '@angular/core'
-import { AuthenticationService,IdeaDetails} from '../authentication.service'
+import { AuthenticationService, IdeaDetails } from '../authentication.service'
 import { Router } from '@angular/router'
 import { db } from '../../../../database/db';
+import { listIdeaComponent} from './listIdea.component'
 @Component({
-    templateUrl: './deleteIdea.component.html'
+    templateUrl: './listIdea.component.html'
 })
 export class deleteIdeaComponent {
     credentials: IdeaDetails = {
@@ -19,7 +20,7 @@ export class deleteIdeaComponent {
                 this.router.navigateByUrl('/listIdea')
             },
             err => {
-                console.error(err)    
+                console.error(err)
             }
         )
     }

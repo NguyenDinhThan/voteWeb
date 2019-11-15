@@ -1,5 +1,6 @@
 import { Component } from '@angular/core'
 import { AuthenticationService, IdeaDetails } from '../authentication.service'
+import { deleteIdeaComponent } from './deleteIdea.component'
 
 @Component({
     templateUrl: './listIdea.component.html'
@@ -18,6 +19,7 @@ export class listIdeaComponent {
             },
             err => {
                 console.error(err)
+                
             }
         )
     }
